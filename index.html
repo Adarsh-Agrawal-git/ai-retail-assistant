@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMind AI</title>
+    <meta name="description" content="ShopMind AI - Your intelligent retail assistant">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Phosphor Icons for modern slick icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Hero Insight Bar -->
+        <div id="hero-insight" class="hero-insight" style="display: none;">
+            <i class="ph-fill ph-lightning"></i> <span>Smart Budget Optimizer initializing...</span>
+        </div>
+        <!-- Header -->
+        <header class="glass-panel">
+            <div class="logo">
+                <i class="ph-fill ph-brain"></i>
+                <h1>ShopMind <span>AI</span></h1>
+            </div>
+            <div class="header-actions">
+                <button id="cart-toggle" class="icon-btn">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span id="cart-badge" class="badge">0</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-layout">
+
+            <!-- Chat Interface -->
+            <section class="chat-section glass-panel">
+                <div class="section-header">
+                    <h2><i class="ph ph-sparkle"></i> AI Assistant</h2>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Messages will be injected here -->
+                    <div class="message ai-message">
+                        <div class="message-content">
+                            Hello! I'm ShopMind AI. What are you looking for today? I can recommend some great products!
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <form id="chat-form">
+                        <input type="text" id="chat-input" placeholder="Type your request here..." autocomplete="off">
+                        <button type="submit" class="primary-btn"><i class="ph ph-paper-plane-tilt"></i></button>
+                    </form>
+                    <!-- Search Insights Display -->
+                    <div id="search-insights" class="search-insights" style="display: none;"></div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="products-section glass-panel">
+                <div class="section-header">
+                    <h2><i class="ph ph-shopping-bag"></i> Recommendations</h2>
+                    <div class="filter-chips">
+                        <span class="chip active">All</span>
+                        <span class="chip">Electronics</span>
+                        <span class="chip">Clothing</span>
+                        <span class="chip">Accessories</span>
+                        <span class="chip">Home</span>
+                        <span class="chip">Sports</span>
+                    </div>
+                </div>
+                <!-- Personalized Header -->
+                <div id="personalized-header" class="personalized-header" style="display: none;"></div>
+                <div class="products-grid" id="products-grid">
+                    <!-- Product Cards will be injected here -->
+                </div>
+            </section>
+
+            <!-- Cart Section (Sidebar on Desktop, Modal/Sheet on Mobile) -->
+            <section class="cart-section glass-panel" id="cart-section">
+                <div class="section-header">
+                    <h2><i class="ph ph-shopping-cart"></i> Your Cart</h2>
+                    <button id="close-cart" class="icon-btn mobile-only"><i class="ph ph-x"></i></button>
+                </div>
+                <div id="cart-optimizer-suggestions" class="optimizer-container"></div>
+                <div class="cart-items" id="cart-items">
+                    <!-- Cart items will be injected here -->
+                    <div class="empty-cart-msg">Your cart is empty</div>
+                </div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax</span>
+                        <span id="cart-tax">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="cart-total">$0.00</span>
+                    </div>
+                    <button class="checkout-btn primary-btn">Proceed to Checkout</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
